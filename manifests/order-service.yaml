@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: order-svc-deployment
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: order-svc
