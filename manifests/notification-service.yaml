@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-svc-deployment
+spec:
+  selector:
+    matchLabels:
+      app: notification-svc
+  template:
+    metadata:
+      labels:
+        app: notification-svc
+    spec:
+      containers:
+      - name: notification-svc
+        image: wonderrfau1t/notification-service:v1
+        env:
+        - name: REDIS_ADDR
+          value: "redis-service:6379"
